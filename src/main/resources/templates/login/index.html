@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta>
+<title>Login</title>
+<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+<script>
+
+</script>
+</head>
+<body>
+	<div class="loginDiv">
+		<form action="/login" method="POST">
+			<table>
+			<tr>
+				<td><span th:text="#{login.staff.no}"></span></td><td><input type="text" name="staffNo" /></td>
+			</tr>
+			<tr>
+				<td><span th:text="#{login.password}"></span></td><td><input type="password" name="password" /></td>
+			</tr>
+			<tr><td colspan="2"><button type="submit" th:text="#{login.button.login}"></button></td></tr>
+			</table>
+		</form>
+	</div>
+</body>
+</html>

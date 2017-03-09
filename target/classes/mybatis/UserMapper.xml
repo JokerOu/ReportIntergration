@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pccw.hkt.cascade.dao.UserMapper">
+	<resultMap id="BaseResultMap" type="com.pccw.hkt.cascade.model.User">
+		<id column="staff_no" property="staffNo" jdbcType="INTEGER" />
+		<result column="name" property="name" jdbcType="VARCHAR" />
+		<result column="fullname" property="fullname" jdbcType="VARCHAR" />
+		<result column="email" property="email" jdbcType="VARCHAR" />
+	</resultMap>
+
+
+	<select id="selectUserInfo" resultMap="BaseResultMap"
+		parameterType="int">
+		select staff_no, name, fullname, email from user where
+		staff_no = #{staffNo};
+	</select>
+
+	<insert id="insertUser" parameterType="com.pccw.hkt.cascade.model.User">
+		insert into USER
+		(staff_no, name, fullname, email) values (#{staffNo}, #{name},
+		#{fullname}, #{email});
+	</insert>
+
+	<update id="updateUser" parameterType="com.pccw.hkt.cascade.model.User">
+		update User set
+		name=#{name}, fullname=#{fullname}, email=#{email} where
+		staff_no=#{staffNo};
+	</update>
+
+	<delete id="deleteUser" parameterType="int">
+		delete from User where
+		staff_no = #{staffNo};
+	</delete>
+
+</mapper>

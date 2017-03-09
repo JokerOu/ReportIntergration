@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta>
+<title>ERROR</title>
+</head>
+<body>
+	<div class="error">
+		<table>
+			<tr>
+				<td><span th:text="#{page.response.code}"></span></td>
+				<td colspan="3">
+					<span th:text="${response.responseCode}"></span>
+				</td>
+			</tr>
+			<tr>
+				<td><span th:text="#{page.response.message}"></span></td>
+				<td colspan="3">
+					<span th:text="${response.message}"></span>
+				</td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>
